@@ -19,4 +19,16 @@
   padding: 10px;
   margin: 10px;
   width: 300px; /* Adjust the width as needed */
+  color: #fff;
+}
+
+
+
+.light-theme .card {
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  color: black;
 }

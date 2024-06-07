@@ -25,6 +25,7 @@
 .login-form label {
   display: block;
   margin-bottom: 5px;
+  color: #fff;
 }
 
 .login-form input {
@@ -47,4 +48,12 @@
 .error-message {
   color: red;
   margin-bottom: 10px;
+}
+
+
+
+.light-theme  .login-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: black;
 }
