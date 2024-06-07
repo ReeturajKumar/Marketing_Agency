@@ -18,7 +18,6 @@ app.use('/api/contact', contactRoutes);
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-// Anything that doesn't match the above routes, send back index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
