@@ -1,0 +1,22 @@
+.head{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 40px;
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px;
+}
+
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px; /* Adjust the width as needed */
+}

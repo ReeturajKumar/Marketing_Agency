@@ -97,3 +97,25 @@
     flex-direction: column;
   }
 }
+
+
+@media only screen and (max-width:370px){
+  
+  .hero_content h2{
+    
+    font-size: 1rem;
+    line-height: 20px;
+  }
+
+  .hero_content p{
+    font-size: 0.6rem;
+    line-height: 20px;
+  }
+
+  .primary_btn, .secondary_btn {
+    font-size: 0.5rem;
+    display: flex;
+    align-items: center;
+    height: 35px
+  }
+}

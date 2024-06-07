@@ -5,13 +5,13 @@ import img2 from '../../assets/2.png';
 export default function Contact() {
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     const formData = {
       name: event.target.name.value,
       email: event.target.email.value,
       message: event.target.message.value,
     };
-
+  
     try {
       const response = await fetch('http://localhost:5000/api/contact', { 
         method: 'POST',
@@ -20,15 +20,15 @@ export default function Contact() {
         },
         body: JSON.stringify(formData),
       });
-
-      const responseData = await response.json();
-
+  
       if (response.ok) {
+        const responseData = await response.json();
         console.log(responseData.message);
         alert('Contact form submitted successfully');
-        event.target.reset();
+        event.target.reset(); // Reset the form
       } else {
-        console.error('Error submitting contact form:', responseData.error);
+        const errorData = await response.json();
+        console.error('Error submitting contact form:', errorData.error);
         alert('Failed to submit contact form');
       }
     } catch (error) {
@@ -36,6 +36,7 @@ export default function Contact() {
       alert('An error occurred while submitting the form');
     }
   };
+  
 
   return (
     <section id='contact' className='contact'>
