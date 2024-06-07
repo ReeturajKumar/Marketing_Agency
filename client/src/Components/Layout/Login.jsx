@@ -1,18 +1,30 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../CSS/Login.css'
+import '../CSS/Login.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate(); 
-  const handleLogin = (e) => {
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    
-    if (username === 'admin' && password === 'password') {
+
+    const response = await fetch('http://localhost:5000/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username, password })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
       console.log('Login successful');
       setError('');
+      localStorage.setItem('token', data.token); // Store token in local storage
       navigate('/admin');
     } else {
       setError('Invalid username or password');
@@ -21,8 +33,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <form onSubmit={handleLogin} 
-      className="login-form">
+      <form onSubmit={handleLogin} className="login-form">
         <h2>Login</h2>
         <div>
           <label htmlFor="username">Username:</label>

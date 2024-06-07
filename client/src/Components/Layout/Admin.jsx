@@ -5,7 +5,12 @@ export default function Admin() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzE3NzY0MjI2LCJleHAiOjE3MTc3Njc4MjZ9.Pvpe4Ulhhkcra3ykLy4urbJ8u1lg8Wlwypl2AtpBh8Q'; 
+    const token = localStorage.getItem('token'); // Retrieve token from local storage
+    if (!token) {
+      console.error('Token is missing!');
+      return;
+    }
+
     fetch('http://localhost:5000/api/contact/contacts', {
       headers: {
         'Authorization': `Bearer ${token}`
@@ -20,7 +25,8 @@ export default function Admin() {
       }
     })
     .catch(error => console.error('Error fetching contact messages:', error));
-}, []);
+}, []); // Only run once when the component mounts
+
   return (
     <div>
     <h1 className='head'>Contact Messages</h1>
