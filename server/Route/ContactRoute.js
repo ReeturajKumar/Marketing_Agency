@@ -17,7 +17,7 @@ contactRouter.get('/contacts', requireAuth, async (req, res) => {
 // Submit contact form
 contactRouter.post('/', async (req, res) => {
   try {
-    const { name, email, phone, company, message } = req.body;
+    const { name, email, message } = req.body;
 
     const newContact = new Contact({
       name,
