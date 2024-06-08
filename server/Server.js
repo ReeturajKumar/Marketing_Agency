@@ -8,10 +8,6 @@ const contactRoutes = require('./Route/ContactRoute');
 require('dotenv').config();
 
 connectDB();
-
-// Correct declaration of __dirname
-const __dirname = path.resolve();
-
 const app = express();
 
 app.use(cors());
