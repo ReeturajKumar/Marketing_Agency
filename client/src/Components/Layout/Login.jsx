@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../CSS/Login.css';
-import API_URL from '../../config/config'; 
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -12,7 +11,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`${API_URL}/auth/login`, { 
+    const response = await fetch('http://localhost:5000/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
