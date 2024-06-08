@@ -10,7 +10,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'https://marketing-agency-bn6r.onrender.com',
+        target: 'https://marketing-agency-1.onrender.com',
         changeOrigin: true,
         secure: false,
       },
