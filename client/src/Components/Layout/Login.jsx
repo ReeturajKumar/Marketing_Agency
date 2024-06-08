@@ -11,7 +11,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('https://marketing-agency-1.onrender.com/login', {
+    const response = await fetch('http://localhost:5000/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -24,7 +24,7 @@ const Login = () => {
     if (data.success) {
       console.log('Login successful');
       setError('');
-      localStorage.setItem('token', data.token); // Store token in local storage
+      localStorage.setItem('token', data.token);
       navigate('/admin');
     } else {
       setError('Invalid username or password');

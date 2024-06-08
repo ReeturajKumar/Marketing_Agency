@@ -5,13 +5,13 @@ export default function Admin() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    const token = localStorage.getItem('token'); // Retrieve token from local storage
+    const token = localStorage.getItem('token');
     if (!token) {
       console.error('Token is missing!');
       return;
     }
 
-    fetch('https://marketing-agency-1.onrender.com/contacts', {
+    fetch('http://localhost:5000/api/contact/contacts', {
       headers: {
         'Authorization': `Bearer ${token}`
       }
