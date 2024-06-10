@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "Server.js",
   "scripts": {
-    "start": "node server/Server.js",
     "dev": "nodemon server/Server.js",
+    "start": "node server/Server.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
