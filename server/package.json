@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "main": "Server.js",
   "scripts": {
-    "dev": "nodemon server/Server.js",
-    "start": "node server/Server.js",
-    "build": "cd client && npm install && npm run build"
-
+    "dev": "Server.js",
+    "start": "Server.js"
   },
   "keywords": [],
   "author": "",
