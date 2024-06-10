@@ -29,25 +29,6 @@ app.use(cookieParser());
 app.use('/api/auth', authRoutes);
 app.use('/api/contact', contactRoutes);
 
-const staticPath = path.join(__dirname, 'client', 'dist');
-console.log(`Serving static files from: ${staticPath}`);
-app.use(express.static(staticPath));
-
-app.get('*', (req, res, next) => {
-  const indexPath = path.join(staticPath, 'index.html');
-  console.log(`Serving index.html from: ${indexPath}`);
-  fs.access(indexPath, fs.constants.F_OK, (err) => {
-    if (err) {
-      console.error(`index.html not found: ${indexPath}`);
-      return res.status(404).json({
-        success: false,
-        statusCode: 404,
-        message: `ENOENT: no such file or directory, stat '${indexPath}'`
-      });
-    }
-    res.sendFile(indexPath);
-  });
-});
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
