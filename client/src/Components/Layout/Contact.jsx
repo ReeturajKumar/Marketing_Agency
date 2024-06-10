@@ -13,7 +13,7 @@ export default function Contact() {
     };
   
     try {
-      const response = await fetch('http://localhost:5000/api/contact', { 
+      const response = await fetch('https://marketing-agency-5br7.onrender.com/api/contact', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

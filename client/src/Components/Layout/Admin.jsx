@@ -11,7 +11,7 @@ export default function Admin() {
       return;
     }
 
-    fetch('http://localhost:5000/api/contact/contacts', {
+    fetch('https://marketing-agency-5br7.onrender.com/api/contact/contacts', {
       headers: {
         'Authorization': `Bearer ${token}`
       }
