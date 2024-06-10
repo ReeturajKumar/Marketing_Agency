@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const authRoutes = require('./Route/authRoute');
 const contactRoutes = require('./Route/ContactRoute');
-const fs = require('fs');
 require('dotenv').config();
 
 mongoose
